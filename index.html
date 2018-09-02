@@ -16,12 +16,23 @@
 <div id='map'></div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWJyYWtoYWxpZCIsImEiOiJjamxjNGFjOTAzZ244M3ZxeXMycTljcG1zIn0.174XiMqxg9uMkqYMRCOXig';
+
+var bounds = [
+    [37.88, -7.231], // Southwest coordinates
+    [40.56, -4.69]  // Northeast coordinates
+];
+
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/ibrakhalid/cjlj8ma6o2ah42ro3ytpp1agb', // stylesheet location
     center: [39.21, -6.165], // starting position [lng, lat]
-    zoom: 9 // starting zoom
+    zoom: 9, // starting zoom
+    maxBounds: bounds // Sets bounds as max
 });
+
+    // Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());
+
 </script>
 
 </body>
